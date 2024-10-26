@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: minioserver
+server:
+  port: 8091
+
+# ?????
+minio:
+  endpointUrl: http://192.168.72.135:9100
+  accessKey: admin
+  secreKey: admin123
+  bucketName: test
