@@ -4,7 +4,7 @@ spring:
 server:
   port: 8091
 
-# ?????
+# 部署的minio服务
 minio:
   endpointUrl: http://192.168.72.135:9100
   accessKey: admin

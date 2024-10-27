@@ -2,12 +2,11 @@ package com.example.minioserver.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * @author: xbronze
  * @date: 2024-10-26 17:04
- * @description: TODO
+ * @description: 加载配置文件中的信息
  */
 @Data
 @ConfigurationProperties(prefix="minio") //读取节点

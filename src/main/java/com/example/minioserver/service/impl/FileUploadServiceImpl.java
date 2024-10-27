@@ -37,16 +37,15 @@ public class FileUploadServiceImpl implements FileUploadService {
 
             // 判断桶是否存在
             boolean found = minioClient.bucketExists(BucketExistsArgs.builder().bucket(minioProperties.getBucketName()).build());
-            if (!found) {       // 如果不存在，那么此时就创建一个新的桶
+            if (!found) {
+                // 如果不存在，那么此时就创建一个新的桶
                 minioClient.makeBucket(MakeBucketArgs.builder().bucket(minioProperties.getBucketName()).build());
-            } else {  // 如果存在打印信息
-                System.out.println("Bucket " + minioProperties.getBucketName() + " already exists.");
+                System.out.println("Bucket " + minioProperties.getBucketName() + " not exists. created successfully!");
             }
 
             // 设置存储对象名称
             String dateDir = DateUtil.format(new Date(), "yyyyMMdd");
             String uuid = UUID.randomUUID().toString().replace("-", "");
-            //20230801/443e1e772bef482c95be28704bec58a901.jpg
             String fileName = dateDir+"/"+uuid+multipartFile.getOriginalFilename();
             System.out.println(fileName);
 
